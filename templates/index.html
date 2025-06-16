@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Coffee and Wifi{% endblock %}
+
+{% block content %}
+
+<body style="background:url('/static/img/kf.jpg');
+background-size: cover; background-position: center; background-repeat: no-repeat; background-color: black">
+
+C
+<br>
+<br>
+<div class="jumbotron text-center">
+    <div class="container" style="color: black; font-weight: bold; font-family: Ariel, sans-serif; font-size: 34;">
+<!--    <div class="container" >-->
+ <div style="background-color: rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 10px;">
+  <h2 class="display-4"> Find Coffee Shops Near You!</h2>
+  <h3>Want to find vibey coffee shops that you can work from in London?</h3>
+  <hr class="my-4">
+<!--  <p>-->
+<!--      You've found the right place! Checkout my collection of coffee shops with data on power socket availability, wifi speed and coffee quality .</p>-->
+  <a class="btn bg-white fg-black btn-lg" href="{{ url_for('cafes') }}" role="button">Show Me!</a>
+  </div>
+      </div>
+    </div>
+    </br>
+    </br>
+</body>
+
+{% endblock %}
