@@ -101,7 +101,7 @@ Power socket availability (yes or no)
 
 #
 
-Running the App: (Not Really Neccessary)
+Running the App: (My image and csv files are not included, so running instructions are hypothetical)
 
 Clone the repository to your local machine
 
