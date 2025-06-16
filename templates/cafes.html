@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Coffee Shops{% endblock %}
+
+{% block content %}
+
+<body style="background: url('/static/img/menu.jpg');
+background-size: cover; background-position: center; background-repeat: no-repeat; background-color: black">
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+        <div style="background-color: rgba(255, 255, 255, 0.5); padding: 20px; border-radius: 10px;">
+      <h1>Coffee Shops</h1>
+
+
+    {% for row in cafes %}
+            {% if row[0] %}
+     <div class="card" id="card-{{ row[0] }}" style="width: 18rem; display: inline-block; margin: 10px; ">
+  <img class="card-img-top" data-src="holder.js/100px180/" alt="100%x180" src="{{ row[2] }}" data-holder-rendered="true" style="height: 180px; width: 100%; display: block;">
+  <div class="card-body">
+    <h5 class="card-title">{{ row[0] }}</h5>
+    <P class="card-text"> Times: {{ row[3] }} - {{ row[4] }} <br> Coffee Rating: {{ row[5] }} <br>Wifi: {{ row[6] }} <br>Power Point: {{ row[7] }} </P>
+        <a href="{{ row[1] }}" type="button" class="btn btn-dark" >Location</a>
+        <a href="{{ row[8] }}" type="button" class="btn bg-light btn-outline-dark">Go To Cafe</a>
+        <br>
+      <button type="button" class="btn btn-link" onclick="location.href='{{ url_for('delete_cafe', cafe_id=row[0]) }}'">Delete</button>
+  </div>
+</div>
+            {% endif %}
+    {% endfor %}
+    <br>
+    <div class="d-flex justify-content-center align-items-center">
+      <a class="btn bg-white fg-black btn-lg " href="{{ url_for('home') }}" role="button">Home</a>
+    </div>
+        </div>
+    </div>
+  </div>
+</div>
+</body>
+
+{% endblock %}
